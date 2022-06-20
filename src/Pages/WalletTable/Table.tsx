@@ -64,7 +64,7 @@ function Table() {
         <thead>
           <tr>
             {availableColumns.map((a) => (
-              <th className="px-6 py-3">
+              <th key={`th-${a}`} className="px-6 py-3">
                 {getColumnNames(a)}
               </th>
             ))}
@@ -76,7 +76,7 @@ function Table() {
             const stockTotalPercentII = getStockTotalPercent(stockTotal, walletTotal);
             const stockIdeal = getStockIdealTotal(s.idealPercentage, totalPercent, currentBalance);
             return (
-              <tr>
+              <tr key={`id-${s.stock.tempId}`}>
                 <td>
                   <button
                     className="btn btn-link"
