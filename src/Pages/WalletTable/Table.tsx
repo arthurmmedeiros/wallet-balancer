@@ -10,7 +10,7 @@ function Table() {
 
   const currentBalance = 20000;
 
-  const userStocks = useAppSelector((state) => state.board.userStocks);
+  const userStocks = useAppSelector((state) => state.userStocks.stocks);
 
   const walletTotal = userStocks.reduce((accumulator, userStock) => {
     const stockTotal = getStockTotal(userStock.amount, userStock.stock.price);

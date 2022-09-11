@@ -4,16 +4,16 @@ import {
 import { useForm } from 'react-hook-form';
 import { useCallback, useEffect } from 'react';
 import { addStock, closeAddModal } from '../../../Stores/Board/BoardSlice';
-import { IAddStock } from '../../../Stores/Board/Types';
 import { useAppDispatch, useAppSelector } from '../../../Stores/Hooks';
 import { IAddStockForm } from '../Model/IAddStockForm';
+import { IAddStock } from '../../../Stores/UserStocks/Types';
 
 const AddStockModal = () => {
   const dispatch = useAppDispatch();
 
   const addModal = useAppSelector((state) => state.board.modal);
 
-  const selectedStock = useAppSelector((state) => state.board.userStocks.find((s) => s.stock.tempId === state.board.modal.selectedStockId));
+  const selectedStock = useAppSelector((state) => state.userStocks.stocks.find((s) => s.stock.tempId === state.board.modal.selectedStockId));
 
   const {
     register, handleSubmit, formState: { errors }, reset, getValues,

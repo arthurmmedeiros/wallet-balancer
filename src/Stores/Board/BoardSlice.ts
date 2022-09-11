@@ -1,38 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { v4 } from 'uuid';
-import { IAddStock, IUserStock, IWalletBoardStore } from './Types';
+import { IAddStock, IUserStock } from '../UserStocks/Types';
+import { IWalletBoardStore } from './Types';
 
 const INITIAL_STATE: IWalletBoardStore = {
   userId: 1,
-  userStocks: [
-    {
-      stock: {
-        code: 'ALUP11',
-        price: 21,
-        tempId: v4(),
-      },
-      amount: 20,
-      idealPercentage: 20,
-    },
-    {
-      stock: {
-        code: 'BCFF11',
-        price: 30,
-        tempId: v4(),
-      },
-      amount: 35,
-      idealPercentage: 20,
-    },
-    {
-      stock: {
-        code: 'EGIE3',
-        price: 40,
-        tempId: v4(),
-      },
-      amount: 45,
-      idealPercentage: 60,
-    },
-  ] as IUserStock[],
   modal: {
     isOpen: false,
     selectedStockId: undefined,
@@ -61,10 +33,6 @@ const BoardSlice = createSlice({
         },
         tempId: v4(),
       } as IUserStock;
-      state.userStocks = [
-        ...state.userStocks,
-        newUserStock,
-      ];
     },
     openAddModal: (state: IWalletBoardStore, action: PayloadAction<string | undefined>) => {
       state.modal.selectedStockId = action.payload;

@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../Stores/Hooks';
 import AddStockModal from './Modals/AddStockModal';
 import Table from './Table';
-import { load, openAddModal } from '../../Stores/Board/BoardSlice';
+import { openAddModal } from '../../Stores/Board/BoardSlice';
+import { loadUserStocks } from '../../Stores/UserStocks/UserStocksSlice';
 
 const WalletTable = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    dispatch(load());
+    dispatch(loadUserStocks());
   }, [dispatch]);
 
   // useEffect(() => {
