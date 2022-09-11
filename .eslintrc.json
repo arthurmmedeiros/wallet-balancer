@@ -45,7 +45,9 @@
         "no-param-reassign": "off",
         "import/prefer-default-export": "off",
         "react/jsx-props-no-spreading": "off",
-        "jsx-a11y/label-has-associated-control": "off"
+        "jsx-a11y/label-has-associated-control": "off",
+        "quotes": ["error", "single"],
+        "jsx-quotes": ["error", "prefer-single"]
     },
     "settings": {
         "import/resolver": {

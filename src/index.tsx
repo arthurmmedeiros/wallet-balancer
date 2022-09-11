@@ -1,4 +1,4 @@
-import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom/client';
 import 'bootstrap/dist/css/bootstrap.css';
 import './Styles/Index.css';
@@ -13,9 +13,11 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <Provider store={Store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={Store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
 );
 
 // If you want to start measuring performance in your app, pass a function

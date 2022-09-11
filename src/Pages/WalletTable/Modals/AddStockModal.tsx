@@ -49,51 +49,51 @@ const AddStockModal = () => {
   }));
 
   return (
-    <Modal isOpen={addModal.isOpen} toggle={handleCloseModal} size="lg">
+    <Modal isOpen={addModal.isOpen} toggle={handleCloseModal} size='lg'>
       <ModalHeader toggle={handleCloseModal}>
         Add/Edit a stock
       </ModalHeader>
       <ModalBody>
-        <Form noValidate className="needs-validation">
+        <Form noValidate className='needs-validation'>
           <FormGroup>
-            <label htmlFor="code" className="form-label">Code</label>
+            <label htmlFor='code' className='form-label'>Code</label>
             <input
-              id="code"
+              id='code'
               className={`form-control ${errors.code ? 'is-invalid' : ''}`}
               {...register('code', { required: true, minLength: 1 })}
             />
-            <div className="invalid-feedback">Code is required</div>
+            <div className='invalid-feedback'>Code is required</div>
           </FormGroup>
           <FormGroup>
-            <label htmlFor="quantity" className="form-label">Quantity</label>
+            <label htmlFor='quantity' className='form-label'>Quantity</label>
             <input
-              type="number"
-              id="quantity"
+              type='number'
+              id='quantity'
               className={`form-control ${errors.amount ? 'is-invalid' : ''}`}
               {...register('amount', { required: true, minLength: 1 })}
             />
-            <div className="invalid-feedback">Quantity is required</div>
+            <div className='invalid-feedback'>Quantity is required</div>
           </FormGroup>
           <FormGroup>
-            <label htmlFor="total-ideal" className="form-label">Total ideal</label>
+            <label htmlFor='total-ideal' className='form-label'>Total ideal</label>
             <input
-              type="number"
-              id="total-ideal"
+              type='number'
+              id='total-ideal'
               className={`form-control ${errors.idealPercentage ? 'is-invalid' : ''}`}
               {...register('idealPercentage', { required: true, minLength: 1 })}
             />
-            <div className="invalid-feedback">Total ideal is required</div>
+            <div className='invalid-feedback'>Total ideal is required</div>
           </FormGroup>
         </Form>
       </ModalBody>
       <ModalFooter>
         <Button
           onClick={() => { onSubmit(); }}
-          color="primary"
+          color='primary'
         >
           Confirm
         </Button>
-        <Button onClick={handleCloseModal} color="secondary">
+        <Button onClick={handleCloseModal} color='secondary'>
           Cancel
         </Button>
       </ModalFooter>

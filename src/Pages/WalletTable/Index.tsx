@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useAppDispatch, useAppSelector } from '../../Stores/Hooks';
+import { useEffect } from 'react';
+import { useAppDispatch } from '../../Stores/Hooks';
 import AddStockModal from './Modals/AddStockModal';
 import Table from './Table';
 import { openAddModal } from '../../Stores/Board/BoardSlice';
@@ -23,9 +23,9 @@ const WalletTable = () => {
   // }, []);
 
   return (
-    <div className="container">
-      <h1 className="mb-3">Wallet balancer</h1>
-      <button type="button" className="btn btn-primary mb-3" onClick={() => { dispatch(openAddModal()); }}>
+    <div className='container'>
+      <h1 className='mb-3'>Wallet balancer</h1>
+      <button type='button' className='btn btn-primary mb-3' onClick={() => { dispatch(openAddModal()); }}>
         New stock
       </button>
       <Table />

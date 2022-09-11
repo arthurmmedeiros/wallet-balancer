@@ -60,11 +60,11 @@ function Table() {
 
   return (
     <div>
-      <table className="table table-striped">
+      <table className='table table-striped'>
         <thead>
           <tr>
             {availableColumns.map((a) => (
-              <th key={`th-${a}`} className="px-6 py-3">
+              <th key={`th-${a}`} className='px-6 py-3'>
                 {getColumnNames(a)}
               </th>
             ))}
@@ -79,8 +79,8 @@ function Table() {
               <tr key={`id-${s.stock.tempId}`}>
                 <td>
                   <button
-                    className="btn btn-link"
-                    type="button"
+                    className='btn btn-link'
+                    type='button'
                     onClick={() => {
                       dispatch(openAddModal(s.stock.tempId));
                     }}
